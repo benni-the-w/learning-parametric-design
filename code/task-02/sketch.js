@@ -64,4 +64,104 @@ function draw() {
   }
   }
 
+
+  fill(Farbe_1)
+  stroke(Farbe_2)
+  let r =0;
+  while(r<= 300) {
+  rect(125 + r, 350, 50, 50);
+  r += 50;
+
+  if(r%20=== 0) {
+    fill(Farbe_1);
+  } 
+   else {
+    fill (Farbe_3);
+  }
+  }
+
+  fill(Farbe_1)
+  stroke(Farbe_2)
+  let o =0;
+  while(o<= 300) {
+  rect(175 + o, 300, 50, 50);
+  o += 50;
+
+  if(o%20=== 0) {
+    fill(Farbe_1);
+  } 
+   else {
+    fill (Farbe_3);
+  }
+  }
+
+  fill(Farbe_1)
+  stroke(Farbe_2)
+  let p =0;
+  while(p<= 300) {
+  rect(225 + p, 250, 50, 50);
+  p += 50;
+
+  if(p%20=== 0) {
+    fill(Farbe_1);
+  } 
+   else {
+    fill (Farbe_3);
+  }
+  }
+
+  fill(Farbe_1)
+  stroke(Farbe_2)
+  let u =0;
+  while(u<= 300) {
+  rect(275 + u, 200, 50, 50);
+  u += 50;
+
+  if(u%20=== 0) {
+    fill(Farbe_1);
+  } 
+   else {
+    fill (Farbe_3);
+  }
+  }
+
+  fill(Farbe_1)
+  stroke(Farbe_2)
+  let t =0;
+  while(t<= 300) {
+  rect(325 + t, 150, 50, 50);
+  t += 50;
+
+  if(t%20=== 0) {
+    fill(Farbe_1);
+  } 
+   else {
+    fill (Farbe_3);
+  }
+  }
+
+  fill(Farbe_1)
+  stroke(Farbe_2)
+  let h =0;
+  while(h<= 300) {
+  rect(375 + h, 100, 50, 50);
+  h += 50;
+
+  if(h%20=== 0) {
+    fill(Farbe_1);
+  } 
+   else {
+    fill (Farbe_3);
+  }
+  }
+
+  strokeWeight (36);
+  stroke(Farbe_2);
+  line (50, 425, 425, 50);
+  stroke(Farbe_3);
+  line (0, 425, 425, 0);
+  stroke(Farbe_1);
+  line (-25, 400, 400, -25);
+  stroke(Farbe_2);
+  line (-25, 350, 350, -25);
 }
