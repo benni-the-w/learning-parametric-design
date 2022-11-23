@@ -156,11 +156,11 @@ function draw() {
   }
 
   strokeWeight (36);
-  stroke(Farbe_2);
-  line (50, 425, 425, 50);
-  stroke(Farbe_3);
-  line (0, 425, 425, 0);
   stroke(Farbe_1);
+  line (50, 425, 425, 50);
+  stroke(Farbe_2);
+  line (0, 425, 425, 0);
+  stroke(Farbe_3);
   line (-25, 400, 400, -25);
   stroke(Farbe_2);
   line (-25, 350, 350, -25);
