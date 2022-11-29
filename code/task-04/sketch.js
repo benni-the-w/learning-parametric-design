@@ -1,49 +1,40 @@
 function preload(){
   // preload assets
-  // https://gorillasun.de/blog/a-guide-to-hexagonal-grids-in-p5js
 }
-
-const sketchWidth = 400;
 const sketchHeight = 400;
+const sketchWidth = 400;
 
-function setup(){
-  L = (sketchHeight, sketchWidth)
-  createCanvas(L, L)
-
-  gridWidth = L 
-  gridHeight = L 
-  hexagonSize = L/10
+function setup() {
+  createCanvas(sketchWidth, sketchHeight);
 }
 
+const radius = 100;
 
-function draw(){
+function draw() {
   background(0);
-  stroke(255);
-  noFill();
+  fill("black");
+  stroke("yellow");
 
-  makeGrid()
+  beginShape();
+  for(let angle = 0; angle < 360; angle += 60) {
+    const radius = 30
+    const x = radius * cos(Math.PI / 180 * angle);
+    const y = radius * sin(Math.PI / 180 * angle);
+    vertex(x + sketchWidth / 2, y + sketchHeight / 2);
 
-}
-function drawHexagon(cX, cY, r){
-  beginShape()
-  for(let a = 0; a < TAU; a+=TAU/6){
-    vertex(cX + r * cos(a), cY + r * sin(a))
+  for (let angle = 0; angle < 360; angle += 15) {
+    push();
+    const x = radius * cos(Math.PI / 180 * angle);
+    const y = radius * sin(Math.PI / 180 * angle);
+
+    translate(x, y);
+
+
+
+    pop();
   }
-  endShape(CLOSE)
+  endShape(CLOSE);
+  noLoop();
 }
 
-function makeGrid(){
-  count = 0
-  for(y = 0; y < gridHeight; y+=hexagonSize/2.3){
-    for(x = 0; x < gridWidth; x+=hexagonSize*1.5){
-      drawHexagon(
-        x+hexagonSize*(count%2==0)*0.75, 
-        y, 
-        hexagonSize/2
-      )
-    }
-    count ++
-  }
-
-  noLoop()
 }
