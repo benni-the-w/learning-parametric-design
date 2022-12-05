@@ -11,7 +11,7 @@ function setup() {
   angleMode(DEGREES);
   frameRate(60)
 
-  button = createButton("reset sketch");
+  button = createButton("Do it again");
   button.mousePressed(resetSketch);
 
   slider1 = createSlider(0.1,2500,5);
