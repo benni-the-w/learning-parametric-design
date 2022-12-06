@@ -1,46 +1,54 @@
-function preload(){
-  // preload assets
+const sketchWidth = 500;
+const sketchHeight = 500;
+
+const rectSize = 15;
+const padding = 4;
+const spacing = rectSize + 2 * padding;
+
+const columns = Math.floor(sketchWidth / spacing);
+const rows = Math.floor(sketchHeight / spacing);
+
+let button; //Wie ändere ich Form und Größe? Brauche ich das let überhaupt?
+
+function setup () {
+  createCanvas(sketchWidth, sketchHeight);   
+
+    button = createButton('Refresh');
+    button.mousePressed(resetSketch);
+    button.position(440, 520);
+    //button.mousePressed (location.reload ());   
 }
 
-//let slider1;
-//let slider2;
-//let button;
+function draw () {
+  fill (255); // Rechtecke
+  stroke (10, 20, 25);
+  strokeWeight (2);
+  background (90, 100, 250)
 
-function setup() {
-  createCanvas(800, 800);
-  angleMode(DEGREES);
-  frameRate(60)
+  for(let x = 0; x <= columns; x += 1) {
+    for(let y = 0; y <= rows; y += 1) {
+      rect(x * spacing, y * spacing, rectSize);
 
- // button = createButton("reset sketch");
- // button.mousePressed(resetSketch);
-//
- // slider1 = createSlider(0.1,2500,10);
- // slider1.position(100, 805);
- // slider1.size(200);
- // 
- // slider2 =createSlider(0,10,0,0.001);
- // slider2.position(300,805);
- // slider2.size(500);
-
-}
-
-let radius = 0
-let angle = 0
-
-
-function draw() {
-  for (let i=0; i<100; i++) {
-  push()
-   translate (width / 2, height / 2)
-   rotate (angle)
-   //angle += slider1.value();
-   angle += 180.55
-  // radius += slider2.value() * 0.01
-   radius += 0.05
-   strokeWeight(5)
-   stroke (random (0,255), random (0,255), random (0,255))
-   point(radius, 0)
-  pop()
-  }
+    }
     
+  }
+
+  //fill (1, 210, 210); 
+  //stroke (10, 210, 210);
+  //fill(mouseX, mouseY, 20); 
+  
+  
+  //if((mouseX, mouseY) === (x*spacing, y*spacing, rectSize)) {
+  //  fill (1, 210, 210);
+  //}
+ 
 }
+
+  function mouseMoved(){
+    fill (0);
+  }
+
+  function resetSketch(){
+    createCanvas(sketchWidth, sketchHeight); 
+    
+  }
