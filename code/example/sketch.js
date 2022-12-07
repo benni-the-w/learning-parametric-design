@@ -21,6 +21,9 @@ function setup () {
 
 function draw () {
   fill (255); // Rechtecke
+  if((mouseX, mouseY) >=500) {
+    fill (1, 210, 210);
+  }
   stroke (10, 20, 25);
   strokeWeight (2);
   background (90, 100, 250)
@@ -32,22 +35,8 @@ function draw () {
     }
     
   }
-
-  //fill (1, 210, 210); 
-  //stroke (10, 210, 210);
-  //fill(mouseX, mouseY, 20); 
-  
-  
-  //if((mouseX, mouseY) === (x*spacing, y*spacing, rectSize)) {
-  //  fill (1, 210, 210);
-  //}
  
 }
-
-  function mouseMoved(){
-    fill (0);
-  }
-
   function resetSketch(){
     createCanvas(sketchWidth, sketchHeight); 
     
