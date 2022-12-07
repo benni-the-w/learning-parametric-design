@@ -6,6 +6,7 @@ let slider1;
 let slider2;
 let button;
 let button2;
+let counter = 1
 
 function setup() {
   createCanvas(1000, 1000);
@@ -15,15 +16,15 @@ function setup() {
   button = createButton("Do it again");
   button.mousePressed(resetSketch);
 
-  //button = createButton ("Pause")
-  //button.mousePressed(pause); 
+  button = createButton ("Pause")
+  button.mousePressed(pause); 
 
   slider1 = createSlider(0.1,360,5);
-  slider1.position(100, 1005);
+  slider1.position(150, 1005);
   slider1.size(200);
   
   slider2 =createSlider(0,10,0,0.01);
-  slider2.position(300,1005);
+  slider2.position(350,1005);
   slider2.size(500);
 
 }
@@ -49,12 +50,17 @@ function draw() {
 
 }
 
-//function pause() {
-//  noLoop();
-//    if (noLoop){
-//     Loop();
-//    }
-//}
+function pause() {
+  if (counter === 1) {
+    noLoop();
+    counter (+1);
+  }
+
+     else if (Counter === 2) {
+      Loop();
+      counter (-1);
+  }
+}
 
 function resetSketch() {
   createCanvas(1000,1000);
