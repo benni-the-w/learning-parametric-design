@@ -38,8 +38,8 @@ function draw() {
   push()
    translate (width / 2, height / 2)
    rotate (angle)
-   angle += slider1.value();
-   //angle += 2165.97
+  // angle += slider1.value();
+   angle += 1
    radius += slider2.value() * 0.01
    //radius += 0.001
    strokeWeight(5)
