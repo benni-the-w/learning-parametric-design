@@ -19,18 +19,33 @@ function setup() {
   button = createButton ("Pause")
   button.mousePressed(pause); 
 
-  slider1 = createSlider(0.1,360,5);
-  slider1.position(150, 1005);
+  button = createButton ("slider.reset")
+  button.mousePressed(angle0); 
+
+  slider1 = createSlider(0.1,360,0);
+  slider1.position(350, 1005);
   slider1.size(200);
   
-  slider2 =createSlider(0,10,0,0.01);
-  slider2.position(350,1005);
+  slider2 = createSlider(0,10,2.345,0.01);
+  slider2.position(350, 1025);
   slider2.size(500);
+
+  slider3 = createSlider(0,1,0.01,0.01);
+  slider3.position(350, 1045);
+  slider3.size(500);
+
+  slider4 = createSlider(0, 0.0001, 1)
+  slider4.position(350, 1065);
+  slider4.size(500);
+
 
 }
 
 let radius = 0
 let angle = 0
+let angleReverse = 0
+let lengthReverse = 0
+let shadowangle = 0
 
 function draw() {
   const max = (slider2.value()-10) * -9 + 10;
@@ -38,9 +53,24 @@ function draw() {
   push()
    translate (width / 2, height / 2)
    rotate (angle)
-   angle += slider1.value();
+
+   if (shadowangle > 720) {
+   // if (angleReverse >= 0) {
+
+      calcAngleReverse()
+   // } else {
+    //  radius += slider2.value() * 0.01
+   // }
+    
+   } else {
+    angle += slider1.value();
+    radius += slider2.value() * 0.01
+    
+   }
+  
+   shadowangle += slider1.value();
    //angle += 2165.97
-   radius += slider2.value() * 0.01
+   
    //radius += 0.001
    strokeWeight(5)
    stroke (random (0,255), random (0,255), random (0,255))
@@ -48,6 +78,20 @@ function draw() {
   pop()
   }
 
+}
+
+function calcAngleReverse() {
+
+  angleReverse += 0.0001
+
+
+  angle += slider1.value() - angleReverse
+  radius += slider2.value() * 0.01 + angleReverse
+
+}
+
+function angle0() {
+  tmp =10;
 }
 
 function pause() {
