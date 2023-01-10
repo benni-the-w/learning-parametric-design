@@ -2,6 +2,8 @@ function preload(){
   // preload assets
 }
 
+
+//update
 let slider1;
 let slider2;
 let button;
