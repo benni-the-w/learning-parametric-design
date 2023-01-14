@@ -4,10 +4,6 @@ function preload(){
 
 
 //update
-let slider1;
-let slider2;
-let button;
-let button2;
 let playStatus = true;
 
 function setup() {
@@ -21,13 +17,13 @@ function setup() {
   // button = createButton ("Pause")
   // button.mousePressed(pause); 
 
-  slider1 = createSlider(0.1,360,0);
-  slider1.position(350, 1005);
-  slider1.size(200);
+  // slider1 = createSlider(0.1,360,0);
+  // slider1.position(350, 1005);
+  // slider1.size(200);
   
-  slider2 = createSlider(0,10,2.345,0.01);
-  slider2.position(350, 1025);
-  slider2.size(500);
+  // slider2 = createSlider(0,10,2.345,0.01);
+  // slider2.position(350, 1025);
+  // slider2.size(500);
 
   // slider3 = createSlider(0,1,0.01,0.01);
   // slider3.position(350, 1045);
@@ -39,7 +35,8 @@ function setup() {
 
 
 }
-
+const angleOffset = 0.1
+const radiusOffset = 2.345
 let radius = 0
 let angle = 0
 let angleReverse = 0
@@ -49,7 +46,7 @@ let count = 0
 let printDot = false
 
 function draw() {
-  const max = (slider2.value()-10) * -9 + 10;
+  const max = (radiusOffset-10) * -9 + 10;
   for (let i=0; i<max; i++) {
   push();
    translate (width / 2, height / 2)
@@ -60,32 +57,47 @@ function draw() {
 
       calcAngleReverse()
    // } else {
-    //  radius += slider2.value() * 0.01
-   // }
+    //  radius += 2.345 * 0.01
+   // }0.1
     
    } else {
-    angle += slider1.value();
-    radius += slider2.value() * 0.01
+    angle += angleOffset
+    radius += radiusOffset * 0.01
     
    }
   
-   shadowangle += slider1.value();
+   shadowangle += angleOffset;
    //angle += 2165.97
    
    //radius += 0.001
    strokeWeight(5)
    count ++
 
-   printDot = false 
-  if (count > 6000 && count <= 7300) {
+   printDot = false
+   
+   if(count<2000 || count ==1) {
+    count % 870 == 0 ? printDot = true : undefined
+   } else if(count < 3000) {
+    count % 375 == 0 ? printDot = true : undefined
+   } else if(count<4000) {
+    count % 375 == 0 ? printDot = true : undefined
+   } else if(count<5000) {
+    count % 250 == 0 ? printDot = true : undefined
+   } else if(count<6000) {
     count % 180 == 0 ? printDot = true : undefined
-  } else if(count > 7300) {
-    count % 150 == 0 ? printDot = true : undefined
+   }else if(count<7000) {
+    count % 180 == 0 ? printDot = true : undefined
+   } else if(count<8000) {
+    count % 180 == 0 ? printDot = true : undefined
+   } else if(count<9000) {
+    count % 170 == 0 ? printDot = true : undefined
    } else if (count % 250 == 0) {
     printDot = true
    }
 
    push();
+   const xtmp = random(-20, 20)
+   const ytmp = random(-20, 20)
    translate(radius, 0);
    if (printDot) {
     stroke (0)
@@ -96,7 +108,7 @@ function draw() {
     //fill(random (0,255), random (0,255), random (0,255));
     beginShape();
     for(let angleFrac = 0; angleFrac < 360; angleFrac += 30) {
-      const radiusFrac = random(10, 30);
+      const radiusFrac = random(10, 20);
       const x = radiusFrac * cos(angleFrac);
       const y = radiusFrac * sin(angleFrac);
       vertex( x  , y );
@@ -122,8 +134,8 @@ function calcAngleReverse() {
   angleReverse += 0.000075
 
 
-  angle += slider1.value() - angleReverse
-  radius += slider2.value() * 0.05 + angleReverse
+  angle += angleOffset - angleReverse
+  radius += radiusOffset * 0.05 + angleReverse
 
 }
 
