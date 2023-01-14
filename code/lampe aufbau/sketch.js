@@ -10,30 +10,6 @@ function setup() {
   createCanvas(1000, 1000);
   angleMode(DEGREES);
   frameRate(60)
-
-  // button = createButton("Do it again");
-  // button.mousePressed(resetSketch);
-
-  // button = createButton ("Pause")
-  // button.mousePressed(pause); 
-
-  // slider1 = createSlider(0.1,360,0);
-  // slider1.position(350, 1005);
-  // slider1.size(200);
-  
-  // slider2 = createSlider(0,10,2.345,0.01);
-  // slider2.position(350, 1025);
-  // slider2.size(500);
-
-  // slider3 = createSlider(0,1,0.01,0.01);
-  // slider3.position(350, 1045);
-  // slider3.size(500);
-
-  // slider4 = createSlider(0, 0.0001, 1)
-  // slider4.position(350, 1065);
-  // slider4.size(500);
-
-
 }
 const angleOffset = 0.1
 const radiusOffset = 2.345
@@ -70,7 +46,7 @@ function draw() {
    //angle += 2165.97
    
    //radius += 0.001
-   strokeWeight(5)
+   strokeWeight(1)
    count ++
 
    printDot = false
