@@ -83,14 +83,14 @@ function draw() {
     //fill(0)
     //fill(random (0,255), random (0,255), random (0,255));
     beginShape();
-    for(let angleFrac = 0; angleFrac < 360; angleFrac += 30) {
+    for(let angleFrac = 0; angleFrac < 360; angleFrac += 15) {
       const radiusFrac = random(10, 20);
       const x = radiusFrac * cos(angleFrac);
-      const y = radiusFrac * sin(angleFrac);
+      const y = radiusFrac * sin(angleFrac)*1.5;
       vertex( x  , y );
 
      
-    }
+     }
     endShape(CLOSE);
 
    }
